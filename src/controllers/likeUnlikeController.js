@@ -1,4 +1,4 @@
-
+import Post from "../models/postModel.js";
 export const toggleLike = async (req, res) => {
     try {
         const postId = await Post.findById(req.params.postId);

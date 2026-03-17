@@ -3,6 +3,8 @@ import connectDB from './src/config/db.js';
 import dotenv from 'dotenv';
 import authRoutes from './src/routes/authRoute.js';
 import postRoutes from './src/routes/postRoute.js';
+import commentRoutes from './src/routes/commentRoute.js';
+import likeUnlikeRoutes from './src/routes/likeUnlikeRoute.js';
 import commentRoute from './src/routes/commentRoute.js';
 import likeUnlikeRoute from './src/routes/likeUnlikeRoute.js';
 
@@ -22,6 +24,8 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1', postRoutes);
+app.use('/api/v1', commentRoutes);
+app.use('/api/v1', likeUnlikeRoutes);
 app.use('/api/v1', commentRoute);
 app.use('/api/v1', likeUnlikeRoute);
 

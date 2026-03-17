@@ -1,7 +1,7 @@
 # Blog-Platform
 A simple REST API for a blogging platform built with Express and MongoDB.
 
-**Status:** Auth and post CRUD routes are wired up. Comment and like routes exist in `src/routes`, but they are not mounted in `server.js` yet.
+**Status:** Auth, post CRUD, comments, and likes are wired up.
 
 ## Features
 - User registration and login with JWT
@@ -76,5 +76,21 @@ Body:
 - `PUT /posts/:id`
 - `DELETE /posts/:id`
 
+### Comments
+- `POST /comments` (protected)  
+Body:
+```json
+{
+  "content": "Nice post!",
+  "postId": "<postId>"
+}
+```
+- `GET /posts/:postId/comments`
+- `PUT /comments/:id` (protected)
+- `DELETE /comments/:id` (protected)
+
+### Likes
+- `POST /posts/:postId/like` (protected)
+
 ## Notes
-- If you want comment and like routes, mount `src/routes/commentRoute.js` and `src/routes/likeUnlikeRoute.js` in `server.js`.
+- Comment and like routes are mounted in `server.js`.
